@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link id="lightCss" rel="stylesheet" href="styles.css" media="">
+    <link id="darkCss" rel="stylesheet" href="darkStyles.css" media="max-width=1px">
+    <!-- Overwriting styles bcuz of laziness -_- -->
+    <style>
+        .home-heading-2{
+            font-weight: 500;
+        }
+        .home-heading-3{
+            font-weight: 500;
+        }
+
+        @media only screen and (min-width: 768px) {
+
+            body{
+                background: aliceblue;
+            }
+        
+            .wrapformobile{
+                height: 731px;
+                width: 411px;
+                margin: auto;
+                overflow: hidden;
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+            }
+
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapformobile">
+        <!-- Menu -->
+    <div id="menu" class="menu top-to-bottom blur">
+        <div class="flex menu-c">
+            <div id="showSideMenu" class="menu-item-1">
+                <ion-icon name="menu" class="menu-icon"></ion-icon>
+            </div>
+            <div id="goBackToHome" class="menu-item-1 hidden">
+                <ion-icon name="arrow-back" class="menu-icon"></ion-icon>
+            </div>
+            <div id="songName2" class="menu-item-2 invisible">
+                Song
+            </div>
+            <!-- <div class="menu-item-3">
+                <ion-icon name="sunny" class="menu-icon-2"></ion-icon>
+            </div> -->
+        </div>
+    </div>
+
+    <!-- Home Screen -->
+    <div id="homeScreen" class="home-screen blur">
+        <div class="home-heading-1">
+            Promu<span class="z-1">z</span>e
+        </div>
+
+        <div class="home-heading-2">
+            Popular this week
+        </div>
+
+        <div id="hideOnMusic" class="flex h-SCROLL">
+
+            <div class="home-card-1" onclick="playMusic({songImage: 'https:\/\/s.yimg.com/ny/api/res/1.2/mI4rBxEF5Z0kiLUURrH3VQ--~A/YXBwaWQ9aGlnaGxhbmRlcjtzbT0xO3c9ODAw/https:\/\/media-mbst-pub-ue1.s3.amazonaws.com/creatr-uploaded-images/2020-01/c8fff8c0-3d09-11ea-b7ff-0f2094a2854d', songName: 'Gurenge', songArtist: 'LiSA', songID: 'https:\/\/res.cloudinary.com/dp1xkuswt/video/upload/v1598754151/Gurenge_ykirrv.mp3'});">
+                <div class="flex home-c--1">
+                    <div class="home-c-1">
+                        <img class="home-c-1-img" src="https://s.yimg.com/ny/api/res/1.2/mI4rBxEF5Z0kiLUURrH3VQ--~A/YXBwaWQ9aGlnaGxhbmRlcjtzbT0xO3c9ODAw/https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-uploaded-images/2020-01/c8fff8c0-3d09-11ea-b7ff-0f2094a2854d">
+                    </div>
+                    <div class="flex home-c-2">
+                        <div class="home-c-2-1">
+                            Gurenge
+                        </div>
+                        <div class="home-c-2-2">
+                            LiSA
+                        </div>
+                        <div class="home-c-2-3">
+                            1:29
+                        </div>
+                    </div>
+                    <div class="home-c-3">
+                        <ion-icon name="play" class="home-c-3-1"></ion-icon>
+                    </div>
+                </div>
+                <div class="flex home-c--2">
+                    <div class="flex home-c-2--stats-c">
+                        <div class="home-c-2-s-I-c">
+                            <ion-icon name="play" class="home-c--2-ICON"></ion-icon>
+                        </div>
+                        <div class="home-c-2-S-VAL">
+                            18M
+                        </div>
+                    </div>
+                    <div class="flex home-c-2--stats-c">
+                        <div class="home-c-2-s-I-c">
+                            <ion-icon name="heart" class="home-c--2-ICON"></ion-icon>
+                        </div>
+                        <div class="home-c-2-S-VAL">
+                            564K
+                        </div>
+                    </div>
+                    <div class="flex home-c-2--stats-c">
+                        <div class="home-c-2-s-I-c">
+                            <ion-icon name="download" class="home-c--2-ICON"></ion-icon>
+                        </div>
+                        <div class="home-c-2-S-VAL">
+                            12.2K
+                        </div>
+                    </div>
+                    <div class="flex home-c-2--stats-c">
+                        <div class="home-c-2-s-I-c">
+                            <ion-icon name="arrow-redo" class="home-c--2-ICON"></ion-icon>
+                        </div>
+                        <div class="home-c-2-S-VAL">
+                            16K
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="home-card-2" onclick="playMusic({songImage: 'https:\/\/i1.sndcdn.com/artworks-000558667800-97icts-t500x500.jpg', songName: 'That\'s Why I Gave Up On Music', songArtist: 'yoshurika', songID: 'https:\/\/res.cloudinary.com/dp1xkuswt/video/upload/v1598754173/%E3%83%A8%E3%83%AB%E3%82%B7%E3%82%AB_-_%E3%81%A0%E3%81%8B%E3%82%89%E5%83%95%E3%81%AF%E9%9F%B3%E6%A5%BD%E3%82%92%E8%BE%9E%E3%82%81%E3%81%9F_Music_Video_afaeot.mp3'});">
+                <div class="flex home-c--1">
+                    <div class="home-c-1">
+                        <img class="home-c-1-img" src="https://i1.sndcdn.com/artworks-000558667800-97icts-t500x500.jpg">
+                    </div>
+                    <div class="flex home-c-2">
+                        <div class="home-c-2-1">
+                            That's Why I...
+                        </div>
+                        <div class="home-c-2-2">
+                            Yorushika
+                        </div>
+                        <div class="home-c-2-3">
+                            4:06
+                        </div>
+                    </div>
+                    <div class="home-c-3">
+                        <ion-icon name="play" class="home-c-3-1"></ion-icon>
+                    </div>
+                </div>
+                <div class="flex home-c--2">
+                    <div class="flex home-c-2--stats-c">
+                        <div class="home-c-2-s-I-c">
+                            <ion-icon name="play" class="home-c--2-ICON"></ion-icon>
+                        </div>
+                        <div class="home-c-2-S-VAL">
+                            42M
+                        </div>
+                    </div>
+                    <div class="flex home-c-2--stats-c">
+                        <div class="home-c-2-s-I-c">
+                            <ion-icon name="heart" class="home-c--2-ICON"></ion-icon>
+                        </div>
+                        <div class="home-c-2-S-VAL">
+                            812K
+                        </div>
+                    </div>
+                    <div class="flex home-c-2--stats-c">
+                        <div class="home-c-2-s-I-c">
+                            <ion-icon name="download" class="home-c--2-ICON"></ion-icon>
+                        </div>
+                        <div class="home-c-2-S-VAL">
+                            42K
+                        </div>
+                    </div>
+                    <div class="flex home-c-2--stats-c">
+                        <div class="home-c-2-s-I-c">
+                            <ion-icon name="arrow-redo" class="home-c--2-ICON"></ion-icon>
+                        </div>
+                        <div class="home-c-2-S-VAL">
+                            28K
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="home-card-1 h-c-1-PLUS-1">
+                ..
+            </div>
+        </div>
+
+<!-- Made for you -->
+
+        <div class="home-heading-3">
+            Made for you
+        </div>
+
+        <div class="flex section-3">
+
+            <div class="flex sec-3-box" onclick="playMusic({songImage: 'https:\/\/i1.sndcdn.com/artworks-000349221030-ektr17-t500x500.jpg', songName: 'Sparkle', songArtist: 'radwimpsstaff', songID: 'https:\/\/res.cloudinary.com/dp1xkuswt/video/upload/v1598754293/Sparkle_Your_Name_AMV_eakzyu.mp3'});">
+                <div class="sec-3--1">
+                    <img class="section-3-image" src="https://i1.sndcdn.com/artworks-000349221030-ektr17-t500x500.jpg">
+                </div>
+                <div class="flex sec-3--2">
+                    <div class="sec-3-b-1">
+                        Sparkle
+                    </div>
+                    <div class="sec-3-b-2">
+                        radwimpsstaff
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex sec-3-box" onclick="playMusic({songImage: 'https:\/\/i2.wp.com/www.kotilyrics.com/wp-content/uploads/2020/06/Marshmello-Halsey-Be-Kind-Lyrics.jpg?resize=400%2C400&ssl=1', songName: 'Be Kind', songArtist: 'H & M', songID: 'https:\/\/pagalworld.to/files/download/id/1151'});">
+                <div class="sec-3--1">
+                    <img class="section-3-image" src="https://i2.wp.com/www.kotilyrics.com/wp-content/uploads/2020/06/Marshmello-Halsey-Be-Kind-Lyrics.jpg?resize=400%2C400&ssl=1">
+                </div>
+                <div class="flex sec-3--2">
+                    <div class="sec-3-b-1">
+                        Be Kind
+                    </div>
+                    <div class="sec-3-b-2">
+                        Marshmallo
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex sec-3-box" onclick="playMusic({songImage: 'https:\/\/i.ytimg.com/vi/LAlzrCndEv8/maxresdefault.jpg', songName: 'Usotsuki', songArtist: 'Yorushika', songID: 'https:\/\/res.cloudinary.com/dp1xkuswt/video/upload/v1598754328/Yorushika_-_Usotsuki_A_Whisker_Away_ED_zdkfxa.mp3'});">
+                <div class="sec-3--1">
+                    <img class="section-3-image" src="https://i.ytimg.com/vi/LAlzrCndEv8/maxresdefault.jpg">
+                </div>
+                <div class="flex sec-3--2">
+                    <div class="sec-3-b-1">
+                        Usotsuki
+                    </div>
+                    <div class="sec-3-b-2">
+                        Yorushika
+                    </div>
+                </div>
+            </div>
+
+            <!-- ERROR -->
+            <div class="flex sec-3-box" onclick="playMusic({songImage: 'https:\/\/i.pinimg.com/originals/79/57/52/7957524c6be6cee0a16ac5ac129f1a9b.jpg', songName: '2002', songArtist: 'Anne-Marie', songID: 'https:\/\/res.cloudinary.com/dp1xkuswt/video/upload/v1598748429/Anne_Marie_2002_Lyrics-_youtube2mp3downloader.com_xuedb4.mp3'});">
+                <div class="sec-3--1">
+                    <img class="section-3-image" src="https://i.pinimg.com/originals/79/57/52/7957524c6be6cee0a16ac5ac129f1a9b.jpg">
+                </div>
+                <div class="flex sec-3--2">
+                    <div class="sec-3-b-1">
+                        2002
+                    </div>
+                    <div class="sec-3-b-2">
+                        Anne-Marie
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex sec-3-box" onclick="playMusic({songImage: 'https:\/\/i.pinimg.com/originals/07/9a/07/079a0778027a2c9c832cc7e206197043.jpg', songName: 'Unravel', songArtist: 'Toru Kitajima', songID: 'https:\/\/res.cloudinary.com/dp1xkuswt/video/upload/v1598754581/Tokyo_Ghoul_Opening_Theme_Unravel_cvwq91.mp3'});">
+                <div class="sec-3--1">
+                    <img class="section-3-image" src="https://i.pinimg.com/originals/07/9a/07/079a0778027a2c9c832cc7e206197043.jpg">
+                </div>
+                <div class="flex sec-3--2">
+                    <div class="sec-3-b-1">
+                        Unravel
+                    </div>
+                    <div class="sec-3-b-2">
+                        Toru Kitajima
+                    </div>
+                </div>
+            </div>
+
+            <!-- ERROR -->
+            <div class="flex sec-3-box" onclick="playMusic({songImage: 'https:\/\/m.media-amazon.com/images/I/614wnBXWiBL._SS500_.jpg', songName: 'End of Time', songArtist: 'K-391', songID: 'https:\/\/res.cloudinary.com/dp1xkuswt/video/upload/v1598749751/K-391_Alan_Walker_Ahrix_-_End_of_Time_Official_Video_r47t8l.mp3'});">
+                <div class="sec-3--1">
+                    <img class="section-3-image" src="https://m.media-amazon.com/images/I/614wnBXWiBL._SS500_.jpg">
+                </div>
+                <div class="flex sec-3--2">
+                    <div class="sec-3-b-1">
+                        End of Time
+                    </div>
+                    <div class="sec-3-b-2">
+                        K-391
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex sec-3-box h-c-1-PLUS-1">
+            </div>
+
+        </div>
+
+<!-- English Songs -->
+
+        <div class="home-heading-3">
+            English Songs
+        </div>
+
+        <div class="flex section-3">
+
+            <div class="flex sec-4-box" onclick="playMusic({songImage: 'https:\/\/i.pinimg.com/originals/b5/49/88/b549885a5990d32450cb6ee68a3215de.jpg', songName: 'Galway Girl', songArtist: 'Ed Sheeran', songID: 'https:\/\/res.cloudinary.com/dp1xkuswt/video/upload/v1598750359/Ed_Sheeran_-_Galway_Girl_Official_Video_1_u67bnt.mp3'});">
+                <div class="sec-3--1">
+                    <img class="section-3-image" src="https://i.pinimg.com/originals/b5/49/88/b549885a5990d32450cb6ee68a3215de.jpg">
+                </div>
+                <div class="flex sec-3--2">
+                    <div class="sec-3-b-1">
+                        Galway Girl
+                    </div>
+                    <div class="sec-3-b-2">
+                        Ed Sheeran
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex sec-4-box" onclick="playMusic({songImage: 'https:\/\/images.genius.com/ad592b4635299a1819a8c5a0073fee73.1000x1000x1.jpg', songName: 'When I Grow Up', songArtist: 'NF', songID: 'https:\/\/res.cloudinary.com/dp1xkuswt/video/upload/v1598751039/NF_-_When_I_Grow_Up_kwrp5t.mp3'});">
+                <div class="sec-3--1">
+                    <img class="section-3-image" src="https://images.genius.com/ad592b4635299a1819a8c5a0073fee73.1000x1000x1.jpg">
+                </div>
+                <div class="flex sec-3--2">
+                    <div class="sec-3-b-1">
+                        When I Grow Up
+                    </div>
+                    <div class="sec-3-b-2">
+                        NF
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex sec-4-box" onclick="playMusic({songImage: 'https:\/\/i1.sndcdn.com/artworks-000358980543-s6q5gr-t500x500.jpg', songName: 'Remembering', songArtist: 'Yutaka-Yamada', songID: 'https:\/\/res.cloudinary.com/dp1xkuswt/video/upload/v1598754655/OFFICIAL_AMV_-_Yutaka_Yamada_-_Remembering_from_Tokyo_Ghoul_re_%E3%82%84%E3%81%BE%E3%81%A0%E8%B1%8A_-_%E6%9D%B1%E4%BA%AC%E5%96%B0%E7%A8%AE_re_Tate_McRae_s3eznp.mp3'});">
+                <div class="sec-3--1">
+                    <img class="section-3-image" src="https://i1.sndcdn.com/artworks-000358980543-s6q5gr-t500x500.jpg">
+                </div>
+                <div class="flex sec-3--2">
+                    <div class="sec-3-b-1">
+                        Remembering
+                    </div>
+                    <div class="sec-3-b-2">
+                        Yutaka-Yamada
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex sec-4-box" onclick="playMusic({songImage: 'https:\/\/www.directlyrics.com/img/upload/anne-marie-friends-video-youtube.jpg', songName: 'FRIENDS', songArtist: 'Marshmallo', songID: 'https:\/\/res.cloudinary.com/dp1xkuswt/video/upload/v1598752703/Marshmello_Anne-Marie_-_FRIENDS_OFFICIAL_FRIENDZONE_ANTHEM_j5hybf.mp3'});">
+                <div class="sec-3--1">
+                    <img class="section-3-image" src="https://www.directlyrics.com/img/upload/anne-marie-friends-video-youtube.jpg">
+                </div>
+                <div class="flex sec-3--2">
+                    <div class="sec-3-b-1">
+                        FRIENDS
+                    </div>
+                    <div class="sec-3-b-2">
+                        Marshmallo
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex sec-4-box" onclick="playMusic({songImage: 'https:\/\/m.media-amazon.com/images/I/61O2SRKg6lL._SS500_.jpg', songName: 'COPYCAT', songArtist: 'Billie Eilish', songID: 'https:\/\/res.cloudinary.com/dp1xkuswt/video/upload/v1598752832/Billie_Eilish_-_COPYCAT_n47q0y.mp3'});">
+                <div class="sec-3--1">
+                    <img class="section-3-image" src="https://m.media-amazon.com/images/I/61O2SRKg6lL._SS500_.jpg">
+                </div>
+                <div class="flex sec-3--2">
+                    <div class="sec-3-b-1">
+                        COPYCAT
+                    </div>
+                    <div class="sec-3-b-2">
+                        Billie Eilish
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex sec-4-box" onclick="playMusic({songImage: 'https:\/\/www.edsheeran.com/sites/g/files/g2000006291/f/201906/BP-thumb-video-square.jpg', songName: 'Beautiful People', songArtist: 'Ed Sheeran', songID: 'https:\/\/res.cloudinary.com/dp1xkuswt/video/upload/v1598752906/Ed_Sheeran_-_Beautiful_People_feat._Khalid_Official_jx7l5y.mp3'});">
+                <div class="sec-3--1">
+                    <img class="section-3-image" src="https://www.edsheeran.com/sites/g/files/g2000006291/f/201906/BP-thumb-video-square.jpg">
+                </div>
+                <div class="flex sec-3--2">
+                    <div class="sec-3-b-1">
+                        Beautiful People
+                    </div>
+                    <div class="sec-3-b-2">
+                        Ed Sheeran
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex sec-3-box h-c-1-PLUS-1">
+            </div>
+
+        </div>
+
+        <div class="home-heading-3">
+            Artists
+        </div>
+
+        <div class="flex section-3">
+
+            <div class="flex sec-5-box">
+                <div class="sec-3--1">
+                    <img class="section-4-image" src="https://i.pinimg.com/originals/18/1b/7a/181b7a42ca18e1989239425b93f5c83b.jpg">
+                </div>
+                <div class="flex sec-3--2">
+                    <div class="sec-3-b-1">
+                        Ed Sheeran
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex sec-5-box">
+                <div class="sec-3--1">
+                    <img class="section-4-image" src="https://yt3.ggpht.com/a/AATXAJyD8SYdT_Rg-adPJZlfdZlzXXXjE23fk_xkI078=s100-c-k-c0xffffffff-no-rj-mo">
+                </div>
+                <div class="flex sec-3--2">
+                    <div class="sec-3-b-1">
+                        Yoshurika
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex sec-5-box">
+                <div class="sec-3--1">
+                    <img class="section-4-image" src="https://yt3.ggpht.com/a/AATXAJyYwdrvyu-OxhtiG3Ju3Wocuy07xT64dW22NGTH4Q=s100-c-k-c0xffffffff-no-rj-mo">
+                </div>
+                <div class="flex sec-3--2">
+                    <div class="sec-3-b-1">
+                        Marshmello
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex sec-5-box">
+                <div class="sec-3--1">
+                    <img class="section-4-image" src="https://yt3.ggpht.com/a/AATXAJwS-EfJzU6v3dqTzjkxpTZOnwUiPKtbB89Y8JpOQw=s100-c-k-c0xffffffff-no-rj-mo">
+                </div>
+                <div class="flex sec-3--2">
+                    <div class="sec-3-b-1">
+                        Eminem
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex sec-5-box">
+                <div class="sec-3--1">
+                    <img class="section-4-image" src="https://yt3.ggpht.com/a/AATXAJwecJ214xgTGgLK7sGod-j9tlY5vClP-pdlm91A0w=s100-c-k-c0xffffffff-no-rj-mo">
+                </div>
+                <div class="flex sec-3--2">
+                    <div class="sec-3-b-1">
+                        radwimpsstaff
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex sec-5-box">
+                <div class="sec-3--1">
+                    <img class="section-4-image" src="https://yt3.ggpht.com/a/AATXAJxQuKjkILwNh928PJPBTKEr9c2FNLBcflE5y78YSA=s100-c-k-c0xffffffff-no-rj-mo">
+                </div>
+                <div class="flex sec-3--2">
+                    <div class="sec-3-b-1">
+                        Anne-Marie
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex sec-3-box h-c-1-PLUS-1 s-ml-0">
+            </div>
+
+        </div>
+
+        <div class="home-heading-3">
+            Anime Songs
+        </div>
+
+        <div class="flex section-3">
+
+            <div class="flex sec-4-box" onclick="playMusic({songImage: 'https:\/\/i1.sndcdn.com/artworks-000569893652-pgwots-t500x500.jpg', songName: 'Grand Escape', songArtist: 'radwimpsstaff', songID: 'https:\/\/res.cloudinary.com/dp1xkuswt/video/upload/v1598754740/Full_Ver._Weathering_With_You_-_Grand_Escape_MV_zllpbn.mp3'});">
+                <div class="sec-3--1">
+                    <img class="section-3-image" src="https://i1.sndcdn.com/artworks-000569893652-pgwots-t500x500.jpg">
+                </div>
+                <div class="flex sec-3--2">
+                    <div class="sec-3-b-1">
+                        Grand Escape
+                    </div>
+                    <div class="sec-3-b-2">
+                        radwimpsstaff
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex sec-4-box" onclick="playMusic({songImage: 'https:\/\/i1.sndcdn.com/artworks-000237910600-2kuvqh-t500x500.jpg', songName: 'Say it', songArtist: 'yoshurika', songID: 'https:\/\/res.cloudinary.com/dp1xkuswt/video/upload/v1598754921/%E3%83%A8%E3%83%AB%E3%82%B7%E3%82%AB_-_%E8%A8%80%E3%81%A3%E3%81%A6_Music_Video_zlvste.mp3'});">
+                <div class="sec-3--1">
+                    <img class="section-3-image" src="https://i1.sndcdn.com/artworks-000237910600-2kuvqh-t500x500.jpg">
+                </div>
+                <div class="flex sec-3--2">
+                    <div class="sec-3-b-1">
+                        Say it
+                    </div>
+                    <div class="sec-3-b-2">
+                        yoshurika
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex sec-4-box" onclick="playMusic({songImage: 'https:\/\/cdna.artstation.com/p/assets/images/images/002/235/712/large/miura-naoko-kanainkd.jpg?1459109201', songName: 'Next to you', songArtist: 'NSZX', songID: 'https:\/\/res.cloudinary.com/dp1xkuswt/video/upload/v1598754820/Parasyte_-_Next_To_You_Anime_Version_nllg2e.mp3'});">
+                <div class="sec-3--1">
+                    <img class="section-3-image" src="https://cdna.artstation.com/p/assets/images/images/002/235/712/large/miura-naoko-kanainkd.jpg?1459109201">
+                </div>
+                <div class="flex sec-3--2">
+                    <div class="sec-3-b-1">
+                        Next to you
+                    </div>
+                    <div class="sec-3-b-2">
+                        NSZX
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex sec-4-box" onclick="playMusic({songImage: 'https:\/\/i1.sndcdn.com/artworks-000189644919-2uf2cs-t500x500.jpg', songName: 'Nandemonaiya', songArtist: 'radwimpsstaff', songID: 'https:\/\/res.cloudinary.com/dp1xkuswt/video/upload/v1598754951/Nandemonaiya_-_movie_ver._pvby7o.mp3'});">
+                <div class="sec-3--1">
+                    <img class="section-3-image" src="https://i1.sndcdn.com/artworks-000189644919-2uf2cs-t500x500.jpg">
+                </div>
+                <div class="flex sec-3--2">
+                    <div class="sec-3-b-1">
+                        Nandemonaiya
+                    </div>
+                    <div class="sec-3-b-2">
+                        radwimpsstaff
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex sec-4-box" onclick="playMusic({songImage: 'https:\/\/i1.sndcdn.com/artworks-000095244955-qr7is8-t500x500.jpg', songName: 'Let Me Hear', songArtist: 'Fear', songID: 'https:\/\/res.cloudinary.com/dp1xkuswt/video/upload/v1598755455/Parasyte_-_Let_Me_Hear_Romaji_English_37_je9tno.mp3'});">
+                <div class="sec-3--1">
+                    <img class="section-3-image" src="https://i1.sndcdn.com/artworks-000095244955-qr7is8-t500x500.jpg">
+                </div>
+                <div class="flex sec-3--2">
+                    <div class="sec-3-b-1">
+                        Let Me Hear
+                    </div>
+                    <div class="sec-3-b-2">
+                        Fear
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex sec-4-box" onclick="playMusic({songImage: 'https:\/\/i1.sndcdn.com/artworks-000332504310-4nz5qq-t500x500.jpg', songName: 'Asphyxia', songArtist: 'Cö shu Nie', songID: 'https:\/\/res.cloudinary.com/dp1xkuswt/video/upload/v1598755280/Asphyxia___Tokyo_Ghoul_fr_s7lnam.mp3'});">
+                <div class="sec-3--1">
+                    <img class="section-3-image" src="https://i1.sndcdn.com/artworks-000332504310-4nz5qq-t500x500.jpg">
+                </div>
+                <div class="flex sec-3--2">
+                    <div class="sec-3-b-1">
+                        Asphyxia
+                    </div>
+                    <div class="sec-3-b-2">
+                        Cö shu Nie
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex sec-3-box h-c-1-PLUS-1">
+            </div>
+
+        </div>
+
+    </div>
+    
+    <!-- Music Screen -->
+    <div id="musicScreen" class="music-screen">
+
+        <div id="musicImage" class="music-disk-con">
+            <div id="btnCircleHandle" class="music-disk-con-2"></div>
+        </div>
+
+        <div id="musicName" class="music-h-1">
+            Gurenge
+        </div>
+
+        <div id="musicArtist" class="music-h-2">
+            LiSA
+        </div>
+
+        <div id="audioHandler1" class="flex btn-container">
+            <div class="btn-2-box f-32">
+                <ion-icon class="btn-2-content-icon" name="play-back"></ion-icon>
+            </div>
+            <div class="btn-2-box b-2-b-MID">
+                <ion-icon id="audioPlay" class="btn-2-content-icon" name="play"></ion-icon>
+                <ion-icon id="audioPause" class="btn-2-content-icon hidden" name="pause"></ion-icon>
+            </div>
+            <div class="btn-2-box f-32">
+                <ion-icon class="btn-2-content-icon" name="play-forward"></ion-icon>
+            </div>
+        </div>
+
+        <div id="audioHandler2" class="flex btn-container">
+            <div class="btn-2-box f-32">
+                <ion-icon class="btn-2-content-icon" name="play-back"></ion-icon>
+            </div>
+            <div class="btn-2-box b-2-b-MID">
+                <ion-icon id="audioPlay2" class="btn-2-content-icon" name="play"></ion-icon>
+                <ion-icon id="audioPause2" class="btn-2-content-icon hidden" name="pause"></ion-icon>
+            </div>
+            <div class="btn-2-box f-32">
+                <ion-icon class="btn-2-content-icon" name="play-forward"></ion-icon>
+            </div>
+        </div>
+
+        <div class="flex bottom-btn">
+            <div id="loopStatus" name="loopOff" class="bottom-btn-content">
+                <ion-icon id="audioLoop" name="infinite" class="bottom-btn-s-icon"></ion-icon>
+            </div>
+            <div id="heartStatus" name="hUn" class="bottom-btn-content b-b-c-MID">
+            <ion-icon id="heartUncheck" name="heart-outline" class="bottom-btn-icon"></ion-icon>
+            <ion-icon id="heartCheck" name="heart" class="bottom-btn-icon hidden"></ion-icon>
+            </div>
+            <div id="repeatStatus" name="repeatOff" class="bottom-btn-content">
+                <ion-icon id="audioRepeat" name="repeat" class="bottom-btn-s-icon"></ion-icon>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Side Menu -->
+    <div id="sideMenu" class="side-menu">
+        <div class="side-container">
+
+            <div id="closeSideMenu" class="side-c-1">
+                <ion-icon class="side-c-1-icon" name="arrow-back"></ion-icon>
+            </div>
+
+            <a href="https://www.sololearn.com/Profile/17904120/?ref=app" target="_blank">
+                <div class="side-c-2 mt-40">
+                    Follow Me
+                </div>
+            </a>
+
+            <a href="https://www.instagram.com/codeninja02/" target="_blank">
+            <div class="side-c-2">
+                Visit my Instagram
+            </div>
+            </a>
+
+            <div class="side-c-2 closeSM">
+                Updates
+            </div>
+
+            <div class="side-c-2 closeSM">
+                Notifications
+            </div>
+
+            <div id="switchMode" class="side-c-2">
+                <span id="modeStatus" name="light">Light Mode</span> <ion-icon id="lightModeIcon" name="sunny" class="side-L-icon"></ion-icon><ion-icon id="darkModeIcon" name="sunny-outline" class="side-L-icon hidden"></ion-icon>
+            </div>
+        </div>
+
+        <div class="side-copy">
+            &copy; Programmer
+        </div>
+    </div>
+
+    <div id="splashScreen" class="splash-screen">
+        <div class="flex s-s-con-1">
+            <!-- <div class="splash-ss-item-1">
+                <ion-icon name="musical-notes"></ion-icon>
+            </div> -->
+            <div>
+                <div class="home-heading-1">
+                    Promu<span id="zTwo" class="z-2">z</span>e
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <audio id="audioEl">
+        <source id="audioElSource" src="" type="audio/mpeg">
+    </audio>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <!-- <script>
+        var logger=function(){var o=null,n={enableLogger:function(){null!=o&&(window.console.log=o)},disableLogger:function(){o=console.log,window.console.log=function(){}}};return n}();$(document).ready(function(){logger.disableLogger()});
+    </script> -->
+    <script type="module" src="https://unpkg.com/ionicons@5.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
