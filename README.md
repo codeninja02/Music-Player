@@ -16,7 +16,7 @@
 # Mini Music Player [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/codeninja02)
 > A simple music player app in a few lines of code!
 
-You can listen to music, control player in this app.
+You can listen to music, control player in this app.<br>
 This app is designed only for mobiles and not very responsive.
 
 - [VIEW DEMO](https://promuze.netlify.app)
